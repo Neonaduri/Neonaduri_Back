@@ -13,6 +13,10 @@ on:
   pull_request:
     branches: [ master ]
 
+env:
+  S3_BUCKET_NAME: seunghodev-bucket
+#  PROJECT_NAME: neonaduri (지정 필요?)
+
 jobs:
   build:
     # 실행 환경 지정
@@ -57,3 +61,7 @@ jobs:
 
     - name: Upload to S3
       run: aws s3 cp --region ap-northeast-2 ./neonaduri-build.zip s3://seunghodev-bucket/neonaduri-build.zip
+
+    ### 새로 추가한 부분 ###
+    - name: Code Deploy
+    - run: aws deploy create-deployment --application-name Neonaduri-Deploy --deployment-config-name CodeDeployDefault.AllAtOnce --deployment-group-name develop --s3-location bucket=$S3_BUCKET_NAME,bundleType=zip,key=$S3_BUCKET_NAME/$GITHUB_SHA.zip
