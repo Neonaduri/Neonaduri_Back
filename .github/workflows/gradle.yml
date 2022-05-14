@@ -53,4 +53,4 @@ jobs:
       run: |
         aws s3 cp \
         --region ap-northeast-2 \
-        --acl private \ ./neonaduri.zip s3://seunghodev-bucket/neonaduri.zip
+        --acl private \ ./neonaduri-build.zip s3://seunghodev-bucket/neonaduri-build.zip
