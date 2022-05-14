@@ -3,13 +3,13 @@
 version: 0.0
 os: linux
 files:
-    - source: /
-      destination: /home/ubuntu/ # 프로젝트 이름(없음)
-      overwrite: yes
+  - source: /
+    destination: /home/ubuntu/ # 프로젝트 이름(없음)
+    overwrite: yes
 
 permissions:
-    - object: /
-      pattern: "**"
-      owner: ubuntu
-      group: ubuntu
+  - object: /
+    pattern: "**"
+    owner: ubuntu
+    group: ubuntu
 
