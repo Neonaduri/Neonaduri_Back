@@ -9,7 +9,8 @@ public class NeonaduriApplication {
 
     public static final String APPLICATION_LOCATIONS = "spring.config.location="
             + "classpath:application.properties,"
-            + "classpath:aws.yml";
+            + "classpath:aws.yml"
+            + "classpath:appspec.yml";
 
     public static void main(String[] args) {
         new SpringApplicationBuilder(NeonaduriApplication.class)
