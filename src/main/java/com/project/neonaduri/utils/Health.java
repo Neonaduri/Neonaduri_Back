@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Health {
 
-    private final Environment env;
+//    private final Environment env;
 
     @GetMapping("/health")
     public ResponseEntity<String> healthCheck(){
