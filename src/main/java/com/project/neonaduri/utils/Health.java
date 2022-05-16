@@ -15,6 +15,7 @@ public class Health {
 
     @GetMapping("/health")
     public ResponseEntity<String> healthCheck(){
+        System.out.println("여기 타니?");
         return ResponseEntity.ok("200");
     }
 }

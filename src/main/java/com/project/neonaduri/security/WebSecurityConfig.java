@@ -163,7 +163,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         skipPathList.add("POST,/user/signup");
         skipPathList.add("POST,/api/idcheck");
         skipPathList.add("POST,/user/login");
+        skipPathList.add("GET,/health");
 //        skipPathList.add("POST,/user/**");
+
 
         //게시글 관련 허용
         skipPathList.add("GET,/api/posts");
