@@ -48,10 +48,10 @@ public class Post extends Timestamped{
     private boolean islike;
 
     @Column(nullable = true)
-    private int likeCnt;
+    private Integer likeCnt;
 
     @Column(nullable = true)
-    private int viewCnt;
+    private Integer viewCnt;
 
     @Column(nullable = true)
     private boolean ispublic;
