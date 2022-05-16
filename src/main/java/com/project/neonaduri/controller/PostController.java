@@ -40,7 +40,7 @@ public class PostController {
                                                  @AuthenticationPrincipal UserDetailsImpl userDetails){
         User user=userDetails.getUser();
         Long postId=postService.showAll(postRequestDto, user);
-        if(postRequestDto.getPostId()==postId){
+        if(postRequestDto.getPostId().equals(postId)){
 
             StatusMessage message= new StatusMessage();
             message.setStatus(StatusEnum.CREATED);

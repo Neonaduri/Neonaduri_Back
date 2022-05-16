@@ -156,7 +156,8 @@ public class PostService {
             int reviewCnt=reviewRepository.countByPostId(post.getPostId()).intValue();
 
             BestAndLocationDto bestAndLocationDto =new BestAndLocationDto(post.getPostId(), post.getPostImgUrl(),post.getPostTitle(),
-                    post.getLocation(),post.isIslike(), post.getLikeCnt(), reviewCnt);
+                    post.getLocation(), post.getStartDate(), post.getEndDate(), post.isIslike(),
+                    post.getLikeCnt(), reviewCnt, post.getTheme(), post.getUser());
             bestList.add(bestAndLocationDto);
         }
         return bestList;
@@ -197,7 +198,8 @@ public class PostService {
             int reviewCnt=reviewRepository.countByPostId(post.getPostId()).intValue();
 
             BestAndLocationDto bestAndLocationDto =new BestAndLocationDto(post.getPostId(), post.getPostImgUrl(),post.getPostTitle(),
-                    post.getLocation(),post.isIslike(), post.getLikeCnt(), reviewCnt);
+                    post.getLocation(),post.getStartDate(), post.getEndDate(), post.isIslike(),
+                    post.getLikeCnt(), reviewCnt,post.getTheme(), post.getUser());
             locationList.add(bestAndLocationDto);
         }
 
@@ -245,7 +247,8 @@ public class PostService {
             int reviewCnt=reviewRepository.countByPostId(post.getPostId()).intValue();
 
             ThemeAndSearchDto themeAndSearchDto =new ThemeAndSearchDto(post.getPostId(), post.getPostImgUrl(),post.getPostTitle(),
-                    post.getLocation(),post.isIslike(), post.getLikeCnt(), reviewCnt, post.getTheme());
+                    post.getLocation(),post.getStartDate(), post.getEndDate(),post.isIslike(),
+                    post.getLikeCnt(), reviewCnt, post.getTheme(), post.getUser());
             themeList.add(themeAndSearchDto);
         }
 
@@ -329,7 +332,8 @@ public class PostService {
             int reviewCnt=reviewRepository.countByPostId(post.getPostId()).intValue();
 
             ThemeAndSearchDto themeAndSearchDto =new ThemeAndSearchDto(post.getPostId(), post.getPostImgUrl(),post.getPostTitle(),
-                    post.getLocation(),post.isIslike(), post.getLikeCnt(), reviewCnt, post.getTheme());
+                    post.getLocation(),post.getStartDate(),post.getEndDate(),post.isIslike(),
+                    post.getLikeCnt(), reviewCnt, post.getTheme(), post.getUser());
             searchList.add(themeAndSearchDto);
         }
 
