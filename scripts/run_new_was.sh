@@ -21,7 +21,7 @@ if [ ! -z ${TARGET_PID} ]; then
   sudo kill ${TARGET_PID}
 fi
 
-nohup java -jar -Dserver.port=${TARGET_PORT} /home/ubuntu/build/libs/* > /home/ubuntu/nohup.out 2>&1 &
+nohup java -jar -Dserver.port=${TARGET_PORT} /home/ubuntu/build/libs/Neonaduri-0.0.1-SNAPSHOT.jar > /home/ubuntu/nohup.out 2>&1 &
 #/home/ec2-user 부분을 /home/ubuntu로 바꿔?
 echo "> Now new WAS runs at ${TARGET_PORT}."
 exit 0
