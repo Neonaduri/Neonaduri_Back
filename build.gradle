@@ -57,9 +57,9 @@ dependencies {
     // openvidu
     implementation 'io.openvidu:openvidu-java-client:2.21.1'
 
-    //secret manager
-    implementation 'org.springframework.cloud:spring-cloud-starter-bootstrap:3.0.3'
-    implementation 'org.springframework.cloud:spring-cloud-starter-aws-secrets-manager-config:2.2.6.RELEASE'
+//    //secret manager
+//    implementation 'org.springframework.cloud:spring-cloud-starter-bootstrap:3.0.3'
+//    implementation 'org.springframework.cloud:spring-cloud-starter-aws-secrets-manager-config:2.2.6.RELEASE'
 }
 
 tasks.named('test') {
