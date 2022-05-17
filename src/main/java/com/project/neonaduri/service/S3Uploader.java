@@ -24,6 +24,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Slf4j
+@RequiredArgsConstructor
 @Component
 public class S3Uploader {
     private final ImageRepository imageRepository;
@@ -37,14 +38,6 @@ public class S3Uploader {
     @Value("${cloud.aws.s3.bucket}")
     public String bucket;  // S3 버킷 이름
 
-    @Autowired
-    public S3Uploader(ImageRepository imageRepository, AmazonS3Client amazonS3Client,
-                      UserRepository userRepository, ReviewRepository reviewRepository){
-        this.imageRepository=imageRepository;
-        this.amazonS3Client=amazonS3Client;
-        this.userRepository=userRepository;
-        this.reviewRepository=reviewRepository;
-    }
 
     public String upload(MultipartFile multipartFile, String dirName) throws IOException {
         File uploadFile = convert(multipartFile)  // 파일 변환할 수 없으면 에러
