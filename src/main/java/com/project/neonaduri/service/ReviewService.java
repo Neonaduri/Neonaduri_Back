@@ -133,7 +133,7 @@ public class ReviewService {
         Review review=reviewRepository.findById(reviewId).orElseThrow(
                 ()->new IllegalArgumentException("해당 리뷰가 없습니다")
         );
-        if(review.getUser().getId()!=userDetails.getUser().getId()){
+        if(review.getUser().getId().equals(userDetails.getUser().getId())){
             throw new IllegalArgumentException("리뷰 작성자만 수정이 가능합니다");
         }
         String reviewImgUrl=s3Uploader.updateReviewImage(multipartFile,"static",reviewId);
@@ -166,7 +166,7 @@ public class ReviewService {
         Review review=reviewRepository.findById(reviewId).orElseThrow(
                 ()->new IllegalArgumentException("해당 리뷰가 없습니다")
         );
-        if(review.getUser().getId()!=userDetails.getUser().getId()){
+        if(review.getUser().getId().equals(userDetails.getUser().getId())){
             throw new IllegalArgumentException("리뷰 작성자만 삭제가 가능합니다");
         }
         Image image=imageRepository.findByImageUrl(review.getReviewImgUrl()).orElse(null);
