@@ -41,3 +41,7 @@ spring:
 jasypt:
   encryptor:
     bean: jasyptStringEncryptor
+
+# cicd 테스트용
+logging-module:
+  version: 0.0.1
