@@ -1,9 +1,6 @@
 package com.project.neonaduri.service;
 
-import com.amazonaws.auth.AWSStaticCredentialsProvider;
-import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.services.s3.AmazonS3Client;
-import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.DeleteObjectRequest;
 import com.amazonaws.services.s3.model.PutObjectRequest;
@@ -15,8 +12,8 @@ import com.project.neonaduri.repository.ReviewRepository;
 import com.project.neonaduri.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -27,7 +24,6 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Slf4j
-@RequiredArgsConstructor
 @Component
 public class S3Uploader {
     private final ImageRepository imageRepository;
@@ -40,6 +36,15 @@ public class S3Uploader {
 
     @Value("${cloud.aws.s3.bucket}")
     public String bucket;  // S3 버킷 이름
+
+    @Autowired
+    public S3Uploader(ImageRepository imageRepository, AmazonS3Client amazonS3Client,
+                      UserRepository userRepository, ReviewRepository reviewRepository){
+        this.imageRepository=imageRepository;
+        this.amazonS3Client=amazonS3Client;
+        this.userRepository=userRepository;
+        this.reviewRepository=reviewRepository;
+    }
 
     public String upload(MultipartFile multipartFile, String dirName) throws IOException {
         File uploadFile = convert(multipartFile)  // 파일 변환할 수 없으면 에러
