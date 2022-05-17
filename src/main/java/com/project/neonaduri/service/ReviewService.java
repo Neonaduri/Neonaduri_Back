@@ -23,7 +23,6 @@ import com.project.neonaduri.repository.ImageRepository;
 import com.project.neonaduri.repository.ReviewRepository;
 import com.project.neonaduri.security.UserDetailsImpl;
 import com.project.neonaduri.validator.UserInfoValidator;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

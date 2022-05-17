@@ -19,7 +19,7 @@ import com.project.neonaduri.dto.review.ReviewResponseDto;
 import com.project.neonaduri.security.UserDetailsImpl;
 import com.project.neonaduri.service.ReviewService;
 import com.project.neonaduri.service.S3Uploader;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -28,12 +28,13 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 
-@AllArgsConstructor
+@RequiredArgsConstructor
 @RequestMapping("/api/detail/reviews")
 @RestController
 public class ReviewController {
+
     private final ReviewService reviewService;
-    private final com.project.neonaduri.service.S3Uploader S3Uploader;
+    private final S3Uploader s3Uploader;
 
     // 후기 등록
     @PostMapping("/{postId}")
@@ -47,7 +48,7 @@ public class ReviewController {
         if(multipartFile.isEmpty()){
             reviewListDto=reviewService.createReviewOnlyContents(postId, reviewContents, userDetails.getUser());
         }else{
-            String reviewImgUrl = S3Uploader.upload(multipartFile, "static");
+            String reviewImgUrl = s3Uploader.upload(multipartFile, "static");
             ReviewRequestDto reviewRequestDto = new ReviewRequestDto(reviewContents, reviewImgUrl);
             reviewListDto=reviewService.createReview(postId, reviewRequestDto, userDetails.getUser());
         }
