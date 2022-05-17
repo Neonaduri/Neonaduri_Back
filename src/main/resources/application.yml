@@ -2,8 +2,8 @@
 cloud:
   aws:
     credentials:
-      accessKey: ENC(4XpkAQNr5IdK8835BaE496J+loJCmmyV34/qWr1pQcM=)
-      secretKey: ENC(WKEyenQg7kETZqdD5o0JYghsJ+98vzVxsDtv4Ck0b4w+m9sZWM4LCwwoAJ0NsTZAtEvicu8WLSk=)
+      access-key: ENC(4XpkAQNr5IdK8835BaE496J+loJCmmyV34/qWr1pQcM=)
+      secret-key: ENC(WKEyenQg7kETZqdD5o0JYghsJ+98vzVxsDtv4Ck0b4w+m9sZWM4LCwwoAJ0NsTZAtEvicu8WLSk=)
     s3:
       bucket: ENC(YM2F5yiYGgLTLuYGrAQX0leh7G/BodhnwVFmNo68L2Y=)
     region:
