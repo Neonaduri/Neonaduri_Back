@@ -41,7 +41,6 @@ spring:
 jasypt:
   encryptor:
     bean: jasyptStringEncryptor
-    password: ${JASYPT_PASSWORD}
 
 # cicd 테스트용
 logging-module:
