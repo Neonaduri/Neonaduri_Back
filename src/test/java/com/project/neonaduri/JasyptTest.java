@@ -16,7 +16,7 @@ public class JasyptTest {
 //        SimpleStringPBEConfig config = new SimpleStringPBEConfig();
 //        System.out.println(System.getenv("JASYPT_PASSWORD"));
 //        config.setPassword(System.getenv("JASYPT_PASSWORD"));
-////        config.setPassword("sjskemfdl");
+////        config.setPassword("");
 //        config.setPoolSize("1");
 //        config.setAlgorithm("PBEWithMD5AndDES");
 //        config.setStringOutputType("base64");
