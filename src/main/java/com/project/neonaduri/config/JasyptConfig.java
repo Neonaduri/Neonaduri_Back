@@ -17,7 +17,7 @@ public class JasyptConfig {
         PooledPBEStringEncryptor encryptor = new PooledPBEStringEncryptor();
         SimpleStringPBEConfig config = new SimpleStringPBEConfig();
         System.out.println(System.getenv("JASYPT_PASSWORD"));
-        config.setPassword("sjskemfdl");
+        config.setPassword(System.getenv("JASYPT_PASSWORD"));
         config.setPoolSize("1");
         config.setAlgorithm("PBEWithMD5AndDES");
         config.setStringOutputType("base64");
