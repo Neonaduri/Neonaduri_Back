@@ -3,21 +3,24 @@ package com.project.neonaduri.config;
 import org.jasypt.encryption.StringEncryptor;
 import org.jasypt.encryption.pbe.PooledPBEStringEncryptor;
 import org.jasypt.encryption.pbe.config.SimpleStringPBEConfig;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class JasyptConfig {
 
-//    @Value("${jasypt.encryptor.password}")
-//    private String encryptKey;
+    @Value("${jasypt.encryptor.password}")
+    private String encryptKey;
 
     @Bean("jasyptStringEncryptor")
     public StringEncryptor stringEncryptor(){
         PooledPBEStringEncryptor encryptor = new PooledPBEStringEncryptor();
         SimpleStringPBEConfig config = new SimpleStringPBEConfig();
-        System.out.println(System.getenv("JASYPT_PASSWORD"));
-        config.setPassword(System.getenv("JASYPT_PASSWORD"));
+//        System.out.println(System.getenv("JASYPT_PASSWORD"));
+//        config.setPassword(System.getenv("JASYPT_PASSWORD"));
+        System.out.println("암호화키는:"+encryptKey);
+        config.setPassword(encryptKey);
         config.setPoolSize("1");
         config.setAlgorithm("PBEWithMD5AndDES");
         config.setStringOutputType("base64");

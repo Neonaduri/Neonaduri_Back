@@ -67,7 +67,7 @@ dependencies {
 
 tasks.named('test') {
     useJUnitPlatform()
-//    systemProperty 'jasypt.encryptor.password', findProperty("jasypt.encryptor.password")
+    systemProperty 'jasypt.encryptor.password', findProperty("jasypt.encryptor.password")
 }
 jar {
     //plain.jar 생성 방지
