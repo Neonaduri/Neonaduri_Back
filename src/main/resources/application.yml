@@ -14,9 +14,9 @@ cloud:
 spring:
   # 데이터베이스 설정
   datasource:
-#    url: ENC(8ZIflIjecoGFLU1VIETwiqcYByGqkRQwS2zIpe+VW7BClEL9n9ywBB1uRIt4abPDzzg/varaMDo1OETe2fe+W5rufokg6WLxlabnyEe4sjJxluplnO25aLU4/T8D4ubSzskkjsRcqjs=)
-#    username: ENC(HTzlu9gkuCtP2sWF9WxdoZVYoev8RxA3)
-#    password: ENC(fCRyo6nA0HIuUOdWXoBxJFOGgTjS9x/H)
+    url: ENC(8ZIflIjecoGFLU1VIETwiqcYByGqkRQwS2zIpe+VW7BClEL9n9ywBB1uRIt4abPDzzg/varaMDo1OETe2fe+W5rufokg6WLxlabnyEe4sjJxluplnO25aLU4/T8D4ubSzskkjsRcqjs=)
+    username: ENC(HTzlu9gkuCtP2sWF9WxdoZVYoev8RxA3)
+    password: ENC(fCRyo6nA0HIuUOdWXoBxJFOGgTjS9x/H)
   jpa:
     hibernate:
       ddl-auto: update
