@@ -16,6 +16,7 @@ public class CiCdController {
 
     @GetMapping("/health")
     public String checkHealth() {
+        System.out.println("헬스장도 못가는데 헬스체크하고있네");
         return "congrat!";
     }
 
