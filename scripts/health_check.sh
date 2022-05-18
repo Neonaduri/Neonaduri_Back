@@ -12,6 +12,7 @@ else
   echo "> No WAS is connected to nginx" exit 1
 fi
 
+echo "> jasypt_password ${JASYPT_PASSWORD}"
 echo "> Start health check of WAS at 'http://127.0.0.1:${TARGET_PORT}' ..."
 
 for RETRY_COUNT in 1 2 3 4 5 6 7 8 9 10
