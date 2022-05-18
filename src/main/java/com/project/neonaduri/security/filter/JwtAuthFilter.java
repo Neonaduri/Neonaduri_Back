@@ -5,8 +5,6 @@ import com.project.neonaduri.security.FilterSkipMatcher;
 import com.project.neonaduri.security.jwt.HeaderTokenExtractor;
 import com.project.neonaduri.security.jwt.JwtPreProcessingToken;
 import lombok.extern.slf4j.Slf4j;
-import org.json.JSONObject;
-import org.springframework.http.HttpStatus;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContext;
@@ -18,7 +16,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 /**
  * Token 을 내려주는 Filter 가 아닌  client 에서 받아지는 Token 을 서버 사이드에서 검증하는 클레스 SecurityContextHolder 보관소에 해당
@@ -49,20 +46,8 @@ public class JwtAuthFilter extends AbstractAuthenticationProcessingFilter {
         String tokenPayload = request.getHeader("Authorization");
         if (tokenPayload == null) {
             // 예외처리
-            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-            response.setContentType("application/json;charset=utf-8");
-
-            JSONObject json = new JSONObject();
-            String message = "토큰이 존재하지 않습니다.";
-
-            json.put("httpStatus", HttpStatus.UNAUTHORIZED);
-            json.put("errorMessage", message);
-
-            PrintWriter out = response.getWriter();
-            out.print(json);
-
-//            response.sendRedirect("/user/login");
-//            return null;
+            response.sendRedirect("/user/login");
+            return null;
         }
         log.info("tokenPayload :"+tokenPayload);
 
