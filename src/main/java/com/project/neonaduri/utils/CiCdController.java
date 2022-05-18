@@ -12,7 +12,8 @@ public class CiCdController {
 
     @GetMapping("/")
     public String version() {
-        return String.format("Project Version : %s", version); }
+        return String.format("Project Version : %s", version);
+    }
 
     @GetMapping("/health")
     public String checkHealth() {
