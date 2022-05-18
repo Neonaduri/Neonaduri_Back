@@ -62,11 +62,12 @@ dependencies {
 //    implementation 'org.springframework.cloud:spring-cloud-starter-aws-secrets-manager-config:2.2.6.RELEASE'
 
     // Jasypt
-    implementation 'com.github.ulisesbocchio:jasypt-spring-boot-starter:3.0.4'
+    implementation 'com.github.ulisesbocchio:jasypt-spring-boot-starter:2.0.0'
 }
 
 tasks.named('test') {
     useJUnitPlatform()
+    systemProperty 'jasypt.encryptor.password', findProperty("jasypt.encryptor.password")
 }
 jar {
     //plain.jar 생성 방지

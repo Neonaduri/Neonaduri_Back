@@ -23,6 +23,7 @@ public class JasyptConfig {
         config.setStringOutputType("base64");
         config.setKeyObtentionIterations("1000");
         config.setSaltGeneratorClassName("org.jasypt.salt.RandomSaltGenerator");
+        config.setIvGeneratorClassName("org.jasypt.iv.NoIvGenerator");
         //config를 바탕으로 암호화 진행
         encryptor.setConfig(config);
 
