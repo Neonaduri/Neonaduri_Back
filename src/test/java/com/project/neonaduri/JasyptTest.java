@@ -1,24 +1,23 @@
-package com.project.neonaduri.config;
+package com.project.neonaduri;
 
 import org.jasypt.encryption.StringEncryptor;
 import org.jasypt.encryption.pbe.PooledPBEStringEncryptor;
 import org.jasypt.encryption.pbe.config.SimpleStringPBEConfig;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
+import org.junit.jupiter.api.Test;
 
-@Configuration
-public class JasyptConfig {
+import static org.assertj.core.api.Assertions.assertThat;
 
-    @Value("${jasypt.encryptor.password}")
-    private String encryptKey;
+public class JasyptTest {
 
-    @Bean("jasyptStringEncryptor")
-    public StringEncryptor stringEncryptor(){
+    @Test
+    public void stringEncryptor(){
+        String text="평문비밀번호";
+
         PooledPBEStringEncryptor encryptor = new PooledPBEStringEncryptor();
         SimpleStringPBEConfig config = new SimpleStringPBEConfig();
-//        System.out.println(System.getenv("JASYPT_PASSWORD"));
-        config.setPassword(encryptKey);
+        System.out.println(System.getenv("JASYPT_PASSWORD"));
+        config.setPassword(System.getenv("JASYPT_PASSWORD"));
+//        config.setPassword("sjskemfdl");
         config.setPoolSize("1");
         config.setAlgorithm("PBEWithMD5AndDES");
         config.setStringOutputType("base64");
@@ -29,7 +28,11 @@ public class JasyptConfig {
         //config를 바탕으로 암호화 진행
         encryptor.setConfig(config);
 
-        //암호화 결과물 return
-        return encryptor;
+        String encryptText=encryptor.encrypt(text);
+        System.out.println(encryptText);
+        String decryptText= encryptor.decrypt(encryptText);
+        System.out.println(decryptText);
+        assertThat(text).isEqualTo(decryptText);
     }
+
 }

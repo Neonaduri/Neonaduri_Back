@@ -2,10 +2,10 @@
 cloud:
   aws:
     credentials:
-      access-key: ENC(4XpkAQNr5IdK8835BaE496J+loJCmmyV34/qWr1pQcM=)
-      secret-key: ENC(WKEyenQg7kETZqdD5o0JYghsJ+98vzVxsDtv4Ck0b4w+m9sZWM4LCwwoAJ0NsTZAtEvicu8WLSk=)
+      access-key: ENC(w6xkxFMAbILs1TacNyyuLYJHqEnrfzZSkgzHEzLQS4U=)
+      secret-key: ENC(29U/a76btjJ2p//TNJ4vKHG3oooJxQ2LtJLrjnx1HXzXJ9/PokB2zFrIrN36tTGVtbl66NF4MSc=)
     s3:
-      bucket: ENC(YM2F5yiYGgLTLuYGrAQX0leh7G/BodhnwVFmNo68L2Y=)
+      bucket: ENC(3uRQApdw5F4dG4FkjX/MV3S/AK+kTxENh9AsWCvWSGU=)
     region:
       static: ap-northeast-2
     stack:
@@ -14,9 +14,9 @@ cloud:
 spring:
   # 데이터베이스 설정
   datasource:
-    url: ENC(So3nt33TFOF29VezCsh1qKLxjBRL2BwS3RgGIUdccOi8gLqapC7C3XF3uPxALzs7v2GGaM2fE6atFhbJ+Qt7d+fEEdRPnQRJ53HQQLtURjUf19fztJ+i9w2oGExguKizAbt05P8Jqes=)
-    username: ENC(DxYftrrTOw7eRdl4KbaNKvJl+jPCIpm6)
-    password: ENC(Kc34HZVf125d2wuW8wXEMBwe8wmRoy3X)
+    url: ENC(8ZIflIjecoGFLU1VIETwiqcYByGqkRQwS2zIpe+VW7BClEL9n9ywBB1uRIt4abPDzzg/varaMDo1OETe2fe+W5rufokg6WLxlabnyEe4sjJxluplnO25aLU4/T8D4ubSzskkjsRcqjs=)
+    username: ENC(HTzlu9gkuCtP2sWF9WxdoZVYoev8RxA3)
+    password: ENC(fCRyo6nA0HIuUOdWXoBxJFOGgTjS9x/H)
   jpa:
     hibernate:
       ddl-auto: update
@@ -27,8 +27,8 @@ spring:
       client:
         registration:
           google:
-            client-id: ENC(UA1wBmLxiptk40E/ZtKrHnP+v65oez66l/ouFbmsS4VhRISrTjpw7Pfbo2y13OibzXtxktVkj8excxpgCbetURkh4K8nMH8dbKoQhTQk1QgfKXizhXPMPg==)
-            client-secret: ENC(FVWByIkYScjOTg31GRAehncmtGo7KoLY7yvVHdzsS9NVt1jrTMYcsyyvArF2GdIS)
+            client-id: ENC(V2+PThC3lvJHKZvSJ3FgsXnLw9OnlH1o1Cqs/gwQ3kx+6W00ArXN5j5/l0ngFmtiKIiT65k4OzcIF0eqQvnKvczD5eO5kNntuD22POt38uRWlYdYET7jqA==)
+            client-secret: ENC(TUlYosjSQ7pGe0W+6zXMj3whjQDXEcwjRSnvrq9F6iBrfmXvzL2P08aBHqvFPhh7)
             scope: profile,email,openid
 
   # 이미지 파일 용량 리사이징
@@ -41,7 +41,7 @@ spring:
 jasypt:
   encryptor:
     bean: jasyptStringEncryptor
-#    password: ${JASYPT_PASSWORD}
+    password: ${JASYPT_PASSWORD}
 #    algorithm: PBEWithMD5AndDES
 #    iv-generator-classname: org.jasypt.iv.NoIvGenerator
 
