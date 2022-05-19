@@ -47,4 +47,4 @@ jasypt:
 
 # cicd 테스트용
 logging-module:
-  version: 0.0.2
+  version: 0.0.1
