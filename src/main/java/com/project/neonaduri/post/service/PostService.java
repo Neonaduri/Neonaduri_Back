@@ -156,7 +156,11 @@ public class PostService {
 
             if(i>3) break;
             Post post=postList.get(i);
-            if(post.getDays().size()==0) continue;
+            if(post.getDays().size()==0) {
+                //테스트필요, Days없을 시 continue전에 i 하나 빼줌
+//                i-=1;
+                continue;
+            }
             //찜받은 갯수 확인
 //            int likeCnt=countLike(post.getPostId());
             Long userId=userDetails.getUser().getId();
