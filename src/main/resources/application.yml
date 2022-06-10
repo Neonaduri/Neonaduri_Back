@@ -1,0 +1,50 @@
+#aws IAM
+cloud:
+  aws:
+    credentials:
+      access-key: ENC(w6xkxFMAbILs1TacNyyuLYJHqEnrfzZSkgzHEzLQS4U=)
+      secret-key: ENC(29U/a76btjJ2p//TNJ4vKHG3oooJxQ2LtJLrjnx1HXzXJ9/PokB2zFrIrN36tTGVtbl66NF4MSc=)
+    s3:
+      bucket: ENC(3uRQApdw5F4dG4FkjX/MV3S/AK+kTxENh9AsWCvWSGU=)
+    region:
+      static: ap-northeast-2
+    stack:
+      auto: false
+
+spring:
+  # 데이터베이스 설정
+  datasource:
+    hikari:
+      maximum-pool-size: 20
+    url: ENC(8ZIflIjecoGFLU1VIETwiqcYByGqkRQwS2zIpe+VW7BClEL9n9ywBB1uRIt4abPDzzg/varaMDo1OETe2fe+W5rufokg6WLxlabnyEe4sjJxluplnO25aLU4/T8D4ubSzskkjsRcqjs=)
+    username: ENC(HTzlu9gkuCtP2sWF9WxdoZVYoev8RxA3)
+    password: ENC(fCRyo6nA0HIuUOdWXoBxJFOGgTjS9x/H)
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  # 소셜로그인 (구글)
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: ENC(V2+PThC3lvJHKZvSJ3FgsXnLw9OnlH1o1Cqs/gwQ3kx+6W00ArXN5j5/l0ngFmtiKIiT65k4OzcIF0eqQvnKvczD5eO5kNntuD22POt38uRWlYdYET7jqA==)
+            client-secret: ENC(TUlYosjSQ7pGe0W+6zXMj3whjQDXEcwjRSnvrq9F6iBrfmXvzL2P08aBHqvFPhh7)
+            scope: profile,email,openid
+
+  # 이미지 파일 용량 리사이징
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+# 암호화
+jasypt:
+  encryptor:
+    bean: jasyptStringEncryptor
+    password: ${JASYPT_PASSWORD}
+
+# cicd 테스트용
+logging-module:
+  version: 0.0.1
