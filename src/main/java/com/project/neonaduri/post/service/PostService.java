@@ -227,7 +227,7 @@ public class PostService {
         return PageRequest.of(pageno, 8, sort);
     }
 
-    //bestList, locationList 페이징
+    //내가 작성한 플랜조회 페이징
     private Pageable getPageableList5(int pageno) {
         Sort.Direction direction = Sort.Direction.DESC;
         Sort sort = Sort.by(direction, "id");

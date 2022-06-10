@@ -15,8 +15,10 @@ public class JasyptConfig {
 
     @Bean("jasyptStringEncryptor")
     public StringEncryptor stringEncryptor(){
+//        String 인코딩할변수= String.valueOf(postId);
         PooledPBEStringEncryptor encryptor = new PooledPBEStringEncryptor();
         SimpleStringPBEConfig config = new SimpleStringPBEConfig();
+
 //        System.out.println(System.getenv("JASYPT_PASSWORD"));
 //        config.setPassword(System.getenv("JASYPT_PASSWORD"));
         config.setPassword(encryptKey);
